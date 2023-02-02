@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
 // Copyright © 2016 Top Free Games <backend@tfgco.com>
@@ -19,7 +19,7 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	api "github.com/topfreegames/podium/proto/podium/api/v1"
+	api "github.com/itsjunglexyz/podium/proto/podium/api/v1"
 )
 
 // healthCheckHandler is the handler responsible for validating that the app is still up.

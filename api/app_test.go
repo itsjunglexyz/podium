@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/itsjunglexyz/podium/api"
+	"github.com/itsjunglexyz/podium/log"
+	"github.com/itsjunglexyz/podium/testing"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/topfreegames/podium/api"
-	"github.com/topfreegames/podium/log"
-	"github.com/topfreegames/podium/testing"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

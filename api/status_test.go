@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
 // Copyright © 2016 Top Free Games <backend@tfgco.com>
@@ -19,8 +19,8 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	api "github.com/topfreegames/podium/proto/podium/api/v1"
-	"github.com/topfreegames/podium/testing"
+	api "github.com/itsjunglexyz/podium/proto/podium/api/v1"
+	"github.com/itsjunglexyz/podium/testing"
 )
 
 var _ = Describe("Status Handler", func() {

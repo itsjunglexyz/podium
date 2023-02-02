@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
 // Copyright © 2016 Top Free Games <backend@tfgco.com>
@@ -13,9 +13,9 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/itsjunglexyz/podium/leaderboard/v2/expiration"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/topfreegames/podium/leaderboard/v2/expiration"
 )
 
 var _ = Describe("Expires Helper", func() {

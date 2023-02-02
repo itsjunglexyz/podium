@@ -6,10 +6,10 @@ import (
 	"time"
 
 	"github.com/golang/mock/gomock"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database/redis"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/topfreegames/podium/leaderboard/v2/database"
-	"github.com/topfreegames/podium/leaderboard/v2/database/redis"
 )
 
 var _ = Describe("Redis Database", func() {

@@ -1,9 +1,9 @@
 package client_test
 
 import (
+	"github.com/itsjunglexyz/podium/client"
+	httpmock "github.com/jarcoal/httpmock"
 	"github.com/spf13/viper"
-	"github.com/topfreegames/podium/client"
-	httpmock "gopkg.in/jarcoal/httpmock.v1"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

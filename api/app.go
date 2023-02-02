@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
 // Copyright © 2016 Top Free Games <backend@tfgco.com>
@@ -12,6 +12,21 @@ package api
 import (
 	"context"
 	"fmt"
+	"github.com/getsentry/raven-go"
+	"github.com/grpc-ecosystem/grpc-gateway/runtime"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/service"
+	lservice "github.com/itsjunglexyz/podium/leaderboard/v2/service"
+	"github.com/itsjunglexyz/podium/log"
+	otgrpc "github.com/opentracing-contrib/go-grpc"
+	"github.com/opentracing-contrib/go-stdlib/nethttp"
+	"github.com/opentracing/opentracing-go"
+	"github.com/rcrowley/go-metrics"
+	uuid "github.com/satori/go.uuid"
+	"github.com/spf13/viper"
+	"go.uber.org/zap"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/status"
 	"net"
 	"net/http"
 	"os"
@@ -21,27 +36,11 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/getsentry/raven-go"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	otgrpc "github.com/opentracing-contrib/go-grpc"
-	"github.com/opentracing-contrib/go-stdlib/nethttp"
-	"github.com/opentracing/opentracing-go"
-	"github.com/rcrowley/go-metrics"
-	uuid "github.com/satori/go.uuid"
-	"github.com/spf13/viper"
-	"github.com/topfreegames/podium/leaderboard/v2/database"
-	"github.com/topfreegames/podium/leaderboard/v2/service"
-	lservice "github.com/topfreegames/podium/leaderboard/v2/service"
-	"github.com/topfreegames/podium/log"
-	"go.uber.org/zap"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/status"
-
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_auth "github.com/grpc-ecosystem/go-grpc-middleware/auth"
+	api "github.com/itsjunglexyz/podium/proto/podium/api/v1"
 	newrelic "github.com/newrelic/go-agent"
 	extnethttpmiddleware "github.com/topfreegames/extensions/middleware"
-	api "github.com/topfreegames/podium/proto/podium/api/v1"
 	jaegercfg "github.com/uber/jaeger-client-go/config"
 )
 

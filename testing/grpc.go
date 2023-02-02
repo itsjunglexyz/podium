@@ -1,9 +1,9 @@
 package testing
 
 import (
+	"github.com/itsjunglexyz/podium/api"
+	pb "github.com/itsjunglexyz/podium/proto/podium/api/v1"
 	. "github.com/onsi/gomega"
-	"github.com/topfreegames/podium/api"
-	pb "github.com/topfreegames/podium/proto/podium/api/v1"
 	"google.golang.org/grpc"
 )
 

@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
 // Copyright © 2016 Top Free Games <backend@tfgco.com>
@@ -15,13 +15,13 @@ import (
 	"math"
 	"strings"
 
-	lmodel "github.com/topfreegames/podium/leaderboard/v2/model"
-	"github.com/topfreegames/podium/leaderboard/v2/service"
+	lmodel "github.com/itsjunglexyz/podium/leaderboard/v2/model"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/service"
 	"go.uber.org/zap"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	api "github.com/topfreegames/podium/proto/podium/api/v1"
+	api "github.com/itsjunglexyz/podium/proto/podium/api/v1"
 )
 
 const (

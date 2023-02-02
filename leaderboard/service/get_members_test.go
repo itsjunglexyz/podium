@@ -6,11 +6,11 @@ import (
 	"time"
 
 	"github.com/golang/mock/gomock"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/model"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/service"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/topfreegames/podium/leaderboard/v2/database"
-	"github.com/topfreegames/podium/leaderboard/v2/model"
-	"github.com/topfreegames/podium/leaderboard/v2/service"
 )
 
 var _ = Describe("Service GetMembers", func() {

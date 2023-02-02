@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
 // Copyright © 2016 Top Free Games <backend@tfgco.com>
@@ -17,9 +17,9 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/itsjunglexyz/podium/config"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database"
 	"github.com/spf13/viper"
-	"github.com/topfreegames/podium/config"
-	"github.com/topfreegames/podium/leaderboard/v2/database"
 )
 
 // ExpirationResult is the struct that represents the result of an expiration job

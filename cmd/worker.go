@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
 // Copyright © 2016 Top Free Games <backend@tfgco.com>
@@ -12,9 +12,9 @@ package cmd
 import (
 	"os"
 
+	"github.com/itsjunglexyz/podium/log"
+	"github.com/itsjunglexyz/podium/worker"
 	"github.com/spf13/cobra"
-	"github.com/topfreegames/podium/log"
-	"github.com/topfreegames/podium/worker"
 	"go.uber.org/zap"
 )
 

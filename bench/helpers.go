@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 //
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
@@ -15,11 +15,11 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"github.com/itsjunglexyz/podium/config"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/service"
 	. "github.com/onsi/gomega"
 	"github.com/topfreegames/extensions/redis"
-	"github.com/topfreegames/podium/config"
-	"github.com/topfreegames/podium/leaderboard/v2/database"
-	"github.com/topfreegames/podium/leaderboard/v2/service"
 )
 
 func getRedis() *redis.Client {

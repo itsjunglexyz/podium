@@ -7,7 +7,7 @@
 # https://github.com/dayvson/go-leaderboard
 # Copyright © 2013 Maxwell Dayvson da Silva
 
-GODIRS = $(shell go list ./... | grep -v /vendor/ | sed s@github.com/topfreegames/podium@.@g | egrep -v "^[.]$$")
+GODIRS = $(shell go list ./... | grep -v /vendor/ | sed s@github.com/itsjunglexyz/podium@.@g | egrep -v "^[.]$$")
 MYIP = $(shell ifconfig | egrep inet | egrep -v inet6 | egrep -v 127.0.0.1 | awk ' { print $$2 } ')
 OS = "$(shell uname | awk '{ print tolower($$0) }')"
 PROTOTOOL := go run github.com/uber/prototool/cmd/prototool
@@ -104,7 +104,7 @@ rtfd: ## Build and open podium documentation
 	@open docs/_build/html/index.html
 
 mock-lib: ## Generate mocks
-	@mockgen github.com/topfreegames/podium/lib PodiumInterface | sed 's/mock_lib/mocks/' > lib/mocks/podium.go
+	@mockgen github.com/itsjunglexyz/podium/lib PodiumInterface | sed 's/mock_lib/mocks/' > lib/mocks/podium.go
 
 proto: ## Generate protobuf files
 	@rm proto/podium/api/v1/*.go > /dev/null 2>&1 || true

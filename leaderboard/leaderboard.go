@@ -1,8 +1,8 @@
 package leaderboard
 
 import (
-	"github.com/topfreegames/podium/leaderboard/v2/database"
-	"github.com/topfreegames/podium/leaderboard/v2/service"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/service"
 )
 
 var _ service.Leaderboard = &service.Service{}

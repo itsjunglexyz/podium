@@ -30,7 +30,7 @@ lint:
 
 generate:
   go_options:
-    import_path: git@github.com:topfreegames/podium.git
+    import_path: git@github.com:itsjunglexyz/podium.git
 
   plugins:
     - name: go

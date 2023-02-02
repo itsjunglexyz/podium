@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
 // Copyright © 2016 Top Free Games <backend@tfgco.com>
@@ -15,11 +15,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/topfreegames/podium/config"
-	"github.com/topfreegames/podium/leaderboard/v2/database"
-	"github.com/topfreegames/podium/leaderboard/v2/database/redis"
-	lservice "github.com/topfreegames/podium/leaderboard/v2/service"
-	"github.com/topfreegames/podium/worker"
+	"github.com/itsjunglexyz/podium/config"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database/redis"
+	lservice "github.com/itsjunglexyz/podium/leaderboard/v2/service"
+	"github.com/itsjunglexyz/podium/worker"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

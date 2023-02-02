@@ -3,8 +3,8 @@ package leaderboard_test
 import (
 	"context"
 
-	"github.com/topfreegames/podium/leaderboard/v2/database"
-	"github.com/topfreegames/podium/leaderboard/v2/testing"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/testing"
 )
 
 //Creates an empty context (shortcut for context.Background())

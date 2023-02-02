@@ -9,8 +9,8 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/itsjunglexyz/podium/api"
 	"github.com/spf13/cobra"
-	"github.com/topfreegames/podium/api"
 )
 
 // versionCmd represents the version command

@@ -3,12 +3,12 @@ package service_test
 import (
 	"context"
 	"fmt"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database"
 
 	"github.com/golang/mock/gomock"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/service"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/topfreegames/podium/leaderboard/v2/database"
-	"github.com/topfreegames/podium/leaderboard/v2/service"
 )
 
 var _ = Describe("Service TotalPages", func() {

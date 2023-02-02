@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
 // Copyright © 2016 Top Free Games <backend@tfgco.com>
@@ -18,18 +18,18 @@ import (
 	"strings"
 	"time"
 
-	"github.com/topfreegames/podium/api"
-	"github.com/topfreegames/podium/leaderboard/v2/database/redis"
-	"github.com/topfreegames/podium/testing"
+	"github.com/itsjunglexyz/podium/api"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database/redis"
+	"github.com/itsjunglexyz/podium/testing"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
+	. "github.com/itsjunglexyz/podium/testing"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	. "github.com/topfreegames/podium/testing"
 
+	pb "github.com/itsjunglexyz/podium/proto/podium/api/v1"
 	uuid "github.com/satori/go.uuid"
-	pb "github.com/topfreegames/podium/proto/podium/api/v1"
 )
 
 var _ = Describe("Leaderboard Handler", func() {

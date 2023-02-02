@@ -1,5 +1,5 @@
 // podium
-// https://github.com/topfreegames/podium
+// https://github.com/itsjunglexyz/podium
 // Licensed under the MIT license:
 // http://www.opensource.org/licenses/mit-license
 // Copyright © 2016 Top Free Games <backend@tfgco.com>
@@ -13,12 +13,13 @@ import (
 	"context"
 	"encoding/base64"
 	"fmt"
+	"github.com/getsentry/raven-go"
 	"net/http"
 	"runtime/debug"
 	"time"
 
-	"github.com/getsentry/raven-go"
-	"github.com/topfreegames/podium/log"
+	_ "github.com/getsentry/raven-go"
+	"github.com/itsjunglexyz/podium/log"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/topfreegames/podium/leaderboard/v2/database"
-	"github.com/topfreegames/podium/leaderboard/v2/model"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/database"
+	"github.com/itsjunglexyz/podium/leaderboard/v2/model"
 )
 
 func convertDatabaseMembersIntoModelMembers(databaseMembers []*database.Member) []*model.Member {

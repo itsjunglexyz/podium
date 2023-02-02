@@ -8,8 +8,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"github.com/itsjunglexyz/podium/api"
 	. "github.com/onsi/gomega"
-	"github.com/topfreegames/podium/api"
 	"github.com/valyala/fasthttp"
 )
 
