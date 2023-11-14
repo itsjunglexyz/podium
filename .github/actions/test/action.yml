@@ -1,0 +1,58 @@
+name: Test
+description: Test Podium
+
+inputs:
+  cluster-mode:
+    description: Should use PODIUM_REDIS_CLUSTER_ENABLED=true
+    required: true
+    type: boolean
+  go-version:
+    description: Go Version
+    required: true
+    type: string
+
+runs:
+  using: composite
+  steps:
+    - name: Discover go internal paths
+      shell: bash
+      id: go-cache-paths
+      run: |
+        echo "go-build=$(go env GOCACHE)" >> $GITHUB_OUTPUT
+        echo "go-mod=$(go env GOMODCACHE)" >> $GITHUB_OUTPUT
+    
+    - name: Set up cache for go-build
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.go-cache-paths.outputs.go-build }}
+        key: ${{ runner.os }}-go-build-${{ hashFiles('**/go.sum') }}
+  
+    - name: Set up cache for go-mod
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.go-cache-paths.outputs.go-mod }}
+        key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
+  
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: ${{ inputs.go-version }}
+  
+    - name: Set up project
+      shell: bash
+      env:
+        PODIUM_REDIS_CLUSTER_ENABLED: ${{ inputs.cluster-mode }}
+      run: |
+        make setup
+
+    - name: Run tests
+      shell: bash
+      env:
+        PODIUM_REDIS_CLUSTER_ENABLED: ${{ inputs.cluster-mode }}
+      run: |
+        make test
+
+    - name: Generate code coverage file
+      shell: bash
+      run: |
+        make coverage

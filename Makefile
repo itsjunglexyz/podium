@@ -27,7 +27,7 @@ clear-hooks: ## Remove pre-commit git hooks
 	@cd .git/hooks && rm pre-commit
 
 setup: setup-hooks ## Install local dependencies and tidy go mods
-	@go get -u github.com/onsi/ginkgo/ginkgo
+	@go install github.com/onsi/ginkgo/ginkgo
 	@go get github.com/gordonklaus/ineffassign
 	@go get github.com/uber/prototool/cmd/prototool
 	@go mod download
