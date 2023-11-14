@@ -1,0 +1,42 @@
+name: Build
+description: Build app
+
+permissions:
+  id-token: write
+  contents: read
+
+inputs:
+  repository:
+    required: true
+  role:
+    required: true
+  region:
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ inputs.role }}
+        aws-region: ${{ inputs.region }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
+
+    - name: Build
+      shell: bash
+      run: |
+        make build
+
+    - name: Tag & Push
+      shell: bash
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: ${{ inputs.repository }}
+        IMAGE_TAG: ${{ inputs.tag }}
+      run: |
+        docker tag podium $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
